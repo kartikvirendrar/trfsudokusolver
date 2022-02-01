@@ -1,5 +1,5 @@
 async function fetchapi(file) {
-    await fetch(`https://trf-sudokusolver.herokuapp.com/sudokusolver/${encodeURIComponent(file)}`, {
+    await fetch(`http://trf-sudokusolver.herokuapp.com/sudokusolver/${encodeURIComponent(file)}`, {
                 "method": "GET"})
                 .then(response => {
                 // console.log('api fetched');
