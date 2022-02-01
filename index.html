@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRF Sudoku Solver</title>
+    <script src="./fetch.js"></script>
+</head>
+<style>
+    th, td {
+      border-style: groove;
+      color: green;
+    }
+    th{
+        width:18px;
+    }
+    table{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    tr:nth-child(4),tr:nth-child(5),tr:nth-child(6) {
+    background-color: #cfcfcf;
+    }
+</style>
+<body style="text-align: center;">
+    <a href="./index.html" style="text-decoration:none; color:black;"><h2 id="h2">TRF</h2>
+    <h1 id="h1">Sudoku Solver</h1></a>
+    <div id="sudoku">Select Sudoku Image : <select id="option" name="option" onchange="func()" required>
+        <option>Select an Option</option>
+        <option value="file">Image from PC</option>
+        <option value="url">Image from URL</option>
+        </select><br><br><input type="hidden" id="file" accept="image/*"><input type="hidden" id="url" size=50><br>
+    <br><button onclick="submit()">Submit</button></div>
+    
+</body>
+<script>
+    function func(){
+    if(document.getElementById('option').value=="file"){
+        document.getElementById('file').type='file';
+        document.getElementById('url').type='hidden';
+    }else if(document.getElementById('option').value=="url"){
+        document.getElementById('url').type='url';
+        document.getElementById('file').type='hidden';
+    }else{
+        document.getElementById('file').type='hidden';
+        document.getElementById('url').type='hidden';
+    }}
+</script>
+</html>
